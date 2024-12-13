@@ -1126,6 +1126,7 @@ dependencies = [
  "axum",
  "built",
  "gazelle_api",
+ "log",
  "rogue_config",
  "rogue_logging",
  "serde",
