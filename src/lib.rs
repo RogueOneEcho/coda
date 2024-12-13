@@ -1,9 +1,9 @@
-use options::*;
 pub use server::*;
 pub use user::*;
-#[cfg(test)]
-mod client_tests;
+
+pub use options::*;
 mod options;
+
 mod server;
 mod user;
 
