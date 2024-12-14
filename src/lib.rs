@@ -1,9 +1,11 @@
-use options::*;
+pub use logging::*;
 pub use server::*;
 use user::*;
 
+use options::*;
 mod options;
 
+mod logging;
 mod server;
 mod user;
 

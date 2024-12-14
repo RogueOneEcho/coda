@@ -6,7 +6,7 @@ use axum::Router;
 use gazelle_api::{GazelleClient, GazelleClientOptions};
 use log::warn;
 use rogue_config::{OptionsProvider, YamlOptionsProvider};
-use rogue_logging::{Error, Logger};
+use rogue_logging::Error;
 use tokio::net::TcpListener;
 
 pub struct Server {
@@ -38,7 +38,6 @@ impl Server {
 }
 
 async fn metrics_internal() -> Result<String, Error> {
-    Logger::force_init("coda".to_owned());
     let options = get_options()?;
     let mut output = String::new();
     for (client_options, user_options) in options {
@@ -84,15 +83,15 @@ fn get_options() -> Result<Vec<(GazelleClientOptions, UserOptions)>, Error> {
 }
 
 #[cfg(test)]
-#[allow(clippy::unwrap_used)]
 mod tests {
     use super::*;
+    use crate::init_logging;
 
     #[tokio::test]
-    pub(crate) async fn metrics_test() -> Result<(), Error> {
+    pub async fn metrics_test() -> Result<(), Error> {
         // Arrange
-        Logger::force_init("coda".to_owned());
-        let clients: Vec<GazelleClientOptions> = YamlOptionsProvider::get().unwrap();
+        init_logging();
+        let clients: Vec<GazelleClientOptions> = YamlOptionsProvider::get()?;
         let expected = clients.len() * 9;
 
         // Act
