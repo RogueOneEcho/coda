@@ -1,7 +1,7 @@
 use serde::Serialize;
 
 #[derive(Default, Serialize)]
-pub struct User {
+pub(crate) struct User {
     pub uploaded_bytes: u64,
     pub downloaded_bytes: u64,
     pub ratio: f32,

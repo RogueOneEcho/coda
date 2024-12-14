@@ -1,5 +1,5 @@
-use crate::options::UserOptions;
 use crate::User;
+use crate::UserOptions;
 use axum::http::StatusCode;
 use axum::routing::get;
 use axum::Router;
@@ -89,7 +89,7 @@ mod tests {
     use super::*;
 
     #[tokio::test]
-    pub async fn metrics_test() -> Result<(), Error> {
+    pub(crate) async fn metrics_test() -> Result<(), Error> {
         // Arrange
         Logger::force_init("coda".to_owned());
         let clients: Vec<GazelleClientOptions> = YamlOptionsProvider::get().unwrap();
