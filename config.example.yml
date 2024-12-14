@@ -1,0 +1,8 @@
+- name: red
+  url: https://redacted.sh
+  key: YOUR_RED_API_KEY
+  user: YOUR_RED_USER_NUMBER
+- name: ops
+  url: https://orpheus.network
+  key: YOUR_OPS_API_KEY
+  user: YOUR_OPS_USER_NUMBER
