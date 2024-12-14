@@ -17,6 +17,6 @@ RUN cargo build --release
 # Build final image with minimal dependencies
 FROM alpine:latest
 EXPOSE 2632/tcp
-COPY --from=builder /app/target/release/coda /bin/coda
+COPY --from=builder /app/target/release/rogue_coda /bin/coda
 WORKDIR /
 ENTRYPOINT ["coda"]
