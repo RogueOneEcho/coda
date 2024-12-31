@@ -1129,7 +1129,7 @@ dependencies = [
  "gazelle_api",
  "log",
  "rogue_config",
- "rogue_logging 0.2.1",
+ "rogue_logging 0.3.0",
  "serde",
  "serde_yaml",
  "tokio",

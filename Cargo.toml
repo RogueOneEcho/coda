@@ -4,7 +4,7 @@ edition = "2021"
 build = "build.rs"
 authors = ["RogueOneEcho"]
 description = "Gazelle and Unit3D user stats for Grafana."
-repository = "https://github.com/RogueOneEcho/caesura"
+repository = "https://github.com/RogueOneEcho/coda"
 license = "AGPL-3.0-only"
 include = [
     "src/**/*",
@@ -18,17 +18,17 @@ version = "0.0.0"
 publish = true
 
 [dependencies]
-axum = "^0.7"
-gazelle_api = "^0.5"
-log = "^0.4"
-rogue_config = "^0.1"
-rogue_logging = "^0.2"
-serde = { version = "^1.0", features = ["derive"] }
-serde_yaml = "^0.9"
-tokio = { version = "^1", features = ["full"] }
+axum = "0.7.9"
+gazelle_api = "0.5.0"
+log = "0.4.22"
+rogue_config = "0.1.1"
+rogue_logging = "0.3.0"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_yaml = "0.9.34"
+tokio = { version = "1.42.0", features = ["full"] }
 
 [build-dependencies]
-built = "^0.7"
+built = "0.7.5"
 
 [lints.clippy]
 pedantic = { level = "warn", priority = -1 }
@@ -82,8 +82,5 @@ unwrap_used = "warn"
 wildcard_enum_match_arm = "allow"
 wildcard_imports = "allow"
 wrong_self_convention = "allow"
-# TODO COULD re-consider the following allows:
 result_large_err = "allow"
-
-# TODO SHOULD investigate solution to await_holding_lock
 await_holding_lock = "allow"

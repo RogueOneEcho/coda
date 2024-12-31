@@ -90,7 +90,7 @@ mod tests {
     #[tokio::test]
     pub async fn metrics_test() -> Result<(), Error> {
         // Arrange
-        init_logging();
+        let _ = init_logging();
         let clients: Vec<GazelleClientOptions> = YamlOptionsProvider::get()?;
         let expected = clients.len() * 9;
 
