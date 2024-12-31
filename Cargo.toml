@@ -1,14 +1,12 @@
 [package]
 name = "rogue_coda"
 edition = "2021"
-build = "build.rs"
 authors = ["RogueOneEcho"]
 description = "Gazelle and Unit3D user stats for Grafana."
 repository = "https://github.com/RogueOneEcho/coda"
 license = "AGPL-3.0-only"
 include = [
     "src/**/*",
-    "build.rs",
     "Cargo.lock",
     "Cargo.toml",
     "LICENSE.md",
@@ -27,13 +25,8 @@ serde = { version = "1.0.217", features = ["derive"] }
 serde_yaml = "0.9.34"
 tokio = { version = "1.42.0", features = ["full"] }
 
-[build-dependencies]
-built = "0.7.5"
-
 [lints.clippy]
 pedantic = { level = "warn", priority = -1 }
-#restriction = { level = "warn", priority = -2 }
-
 absolute_paths = "warn"
 arithmetic_side_effects = "allow"
 as_conversions = "warn"
